@@ -38,13 +38,18 @@ Azure Sql DB, storage, Doc. DB, 그 외 index를 생성하는 모든 서비스 �
 
 score profile
 - 특정 검색 결과를 상위에 위치 시키거나, 특정 유저에 대해 다른 검색 결과 제공이 가능한 기능
- 
 
  # DEMO
 
-- 인덱스 새성
+- 인덱스 생성
 
- `{
+~~~
+POST https://[service name].search.windows.net/indexes?api-version=2016-09-01
+Content-Type: application/json
+api-key: [api-key]
+~~~
+~~~
+ {
     "name": "hotels",  
     "fields": [
         {"name": "hotelId", "type": "Edm.String", "key": true, "searchable": false, "sortable": false, "facetable": false},
@@ -60,7 +65,8 @@ score profile
         {"name": "rating", "type": "Edm.Int32"},
         {"name": "location", "type": "Edm.GeographyPoint"}
     ]
-}`
+}
+~~~
 
 
  # 참조
