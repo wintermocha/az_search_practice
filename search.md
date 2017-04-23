@@ -23,7 +23,6 @@
 - 시제, 복수, 띄어쓰기 등
 
 제안 검색(suggestion)
-- 
 
 패싯 탐색
 
@@ -41,5 +40,28 @@ score profile
 - 특정 검색 결과를 상위에 위치 시키거나, 특정 유저에 대해 다른 검색 결과 제공이 가능한 기능
  
 
- **참조**
+ # DEMO
+
+- 인덱스 새성
+
+ `{
+    "name": "hotels",  
+    "fields": [
+        {"name": "hotelId", "type": "Edm.String", "key": true, "searchable": false, "sortable": false, "facetable": false},
+        {"name": "baseRate", "type": "Edm.Double"},
+        {"name": "description", "type": "Edm.String", "filterable": false, "sortable": false, "facetable": false},
+        {"name": "description_fr", "type": "Edm.String", "filterable": false, "sortable": false, "facetable": false, "analyzer": "fr.lucene"},
+        {"name": "hotelName", "type": "Edm.String", "facetable": false},
+        {"name": "category", "type": "Edm.String"},
+        {"name": "tags", "type": "Collection(Edm.String)"},
+        {"name": "parkingIncluded", "type": "Edm.Boolean", "sortable": false},
+        {"name": "smokingAllowed", "type": "Edm.Boolean", "sortable": false},
+        {"name": "lastRenovationDate", "type": "Edm.DateTimeOffset"},
+        {"name": "rating", "type": "Edm.Int32"},
+        {"name": "location", "type": "Edm.GeographyPoint"}
+    ]
+}`
+
+
+ # 참조
  >[Azure Search Documentation](https://docs.microsoft.com/en-us/azure/search/)
